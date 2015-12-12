@@ -2,7 +2,8 @@
 
 import itertools
 
-def fibonnaci ():
+
+def fibonnaci():
     previous = 1
     current = 1
 
@@ -12,7 +13,8 @@ def fibonnaci ():
         current += previous
         previous = temp
 
-def p2 ():
-    print(sum(filter(lambda x: x % 2 == 0, itertools.takewhile(lambda x: x < 4000000, fibonnaci()))))
 
+def p2():
+    print(sum(filter(lambda x: x % 2 == 0,
+                     itertools.takewhile(lambda x: x < 4000000, fibonnaci()))))
 

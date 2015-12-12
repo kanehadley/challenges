@@ -3,6 +3,7 @@
 import math
 import itertools
 
+
 def isprime(n):
     """Indicates if the integer is prime
 
@@ -13,7 +14,10 @@ def isprime(n):
     :return: True or False whether the integer is prime
     """
 
-    return len(list(itertools.dropwhile(lambda x: n % x != 0, range(2, math.floor(math.sqrt(n) + 1))))) == 0
+    return len(list(
+            itertools.dropwhile(lambda x: n % x != 0,
+                                range(2, math.floor(math.sqrt(n) + 1))))) == 0
+
 
 def prime_generator():
     """Iterator that produces prime numbers
@@ -26,6 +30,9 @@ def prime_generator():
             yield current
         current += 1
 
-def p3 ():
-    factors = filter(lambda x: 600851475143 % x == 0, range(math.ceil(math.sqrt(600851475143)) + 1, 1, -1))
-    print(list(itertools.islice(itertools.dropwhile(lambda x: not p3.isprime(x), factors), 1))[0])
+
+def p3():
+    factors = filter(lambda x: 600851475143 % x == 0,
+                     range(math.ceil(math.sqrt(600851475143)) + 1, 1, -1))
+    print(list(itertools.islice(itertools.dropwhile(lambda x: not isprime(x),
+                                                    factors), 1))[0])
