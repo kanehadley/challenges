@@ -1,20 +1,12 @@
 #! /usr/bin/env python
 
-import itertools
+from itertools import takewhile
 
-
-def fibonnaci():
-    previous = 1
-    current = 1
-
-    while True:
-        yield current
-        temp = current
-        current += previous
-        previous = temp
+import toolset
 
 
 def p2():
+    fibonnaci = toolset.fibonnaci_generator()
     print(sum(filter(lambda x: x % 2 == 0,
-                     itertools.takewhile(lambda x: x < 4000000, fibonnaci()))))
+                     takewhile(lambda x: x < 4000000, fibonnaci))))
 
